@@ -1,3 +1,8 @@
+imfaber_v2
+
+My personal website v2
+
+
 # Installation wizard for October
 
 The wizard installation is a recommended way to install October. It is simpler than the command-line installation and doesn't require any special skills.
