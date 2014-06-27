@@ -1,5 +1,0 @@
-9999999999s:172:"a:2:{s:5:"mtime";i:1402698514;s:7:"content";s:118:"{% put head %}
-    <link href="css/theme.css" rel="stylesheet">
-    <script src="js/script.js"></script>
-{% endput %}
-";}";
