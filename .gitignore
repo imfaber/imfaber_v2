@@ -3,3 +3,4 @@
 
 ._*
 /app/config/database.php
+/app/storage*
