@@ -18,8 +18,11 @@ gulp.task('compile-sass', function() {
 
 // Scripts
 gulp.task('compile-js', function() {
-  gulp.src(__dirname + '/js/src/**/*.js')
-    .pipe(concat('global.js'))
+  gulp.src([
+    __dirname + '/js/src/**/_*.js',
+    __dirname + '/js/src/**/app.js'
+  ])
+    .pipe(concat('app.js'))
     .pipe(gulp.dest(__dirname + '/js/dist/'))
 });
 
@@ -47,8 +50,6 @@ gulp.task('watch', ['watch-sass', 'watch-js']);
 gulp.task('pwd', function() {
   console.log(__dirname);
 });
-
-
 
 // Add a task to render the output
 gulp.task('help', taskListing);

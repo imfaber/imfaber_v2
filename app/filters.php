@@ -13,7 +13,8 @@
 
 App::before(function($request)
 {
-	//
+	// include krumo
+  require app_path() . '/library/krumo/class.krumo.php';
 });
 
 

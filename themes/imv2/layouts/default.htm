@@ -1,17 +1,32 @@
 description = "Default layout"
 ==
+<?
+function onStart(){
+    $title = 'Fabrizo Meinero - Web artisan';
+    if ($this->id!='home') {
+        $title = $this->page->title . ' | ' . $title;
+    }
+    $this->page->title = $title;
+    // $this->krumo = krumo($this->page);
+}
+?>
+==
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <title>October CMS - {{ this.page.title }}</title>
-        <meta name="author" content="October CMS">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ this.page.title }}</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <link rel="icon" type="image/png" href="{{ 'assets/images/october.png'|theme }}" />
         {% styles %}
         <link href="{{ [
             'assets/css/theme.css'
         ]|theme }}" rel="stylesheet">
     </head>
+
     <body>
 
         <!-- Header -->
@@ -53,8 +68,8 @@ description = "Default layout"
 
         <!-- Scripts -->
         <script src="{{ [
-            'assets/js/jquery.js',
-            'assets/js/app.js'
+            'assets/js/vendor/modernizr.js',
+            'assets/js/vendor/jquery.js'
         ]|theme }}"></script>
         {% framework extras %}
         {% scripts %}
