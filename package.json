@@ -1,0 +1,17 @@
+{
+  "name": "my_npm_mods",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.8.5",
+    "gulp-compass": "~1.1.9",
+    "gulp-concat": "~2.2.0",
+    "gulp-uglify": "~0.3.1",
+    "gulp-watch": "~0.6.8",
+    "gulp-hub": "~0.5.1",
+    "gulp-shell": "~0.2.7"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}
