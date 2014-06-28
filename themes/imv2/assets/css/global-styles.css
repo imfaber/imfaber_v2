@@ -281,6 +281,11 @@ th {
   box-sizing: border-box;
 }
 
+/* line 1, ../sass/_base.scss */
+body {
+  background: red;
+}
+
 /* Welcome to Compass. Use this file to define print styles.
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
