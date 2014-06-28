@@ -5,3 +5,4 @@
 /app/config/database.php
 /app/storage*
 /node_modules
+*.sass-cache
