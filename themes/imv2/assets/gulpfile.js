@@ -13,6 +13,9 @@ gulp.task('compile-sass', function() {
     css: 'css',
     sass: 'sass'
   }))
+  .on('error', function(err) {
+    console.log(err);
+  })
   .pipe(gulp.dest('css'));
 });
 

@@ -1,0 +1,120 @@
+// =============================================================================
+// Intro
+// =============================================================================
+.intro{
+  width: 100%;
+  text-align: center;
+  height: 60px;
+  // margin: 20% 0 10%;
+  color: $white;
+
+  h1,
+  .slogan{
+    @include element-hidden;
+    font-weight: normal;
+  }
+
+  h1{
+    @include font-size(25px);
+    margin: 0 0 .3em;
+  }
+
+  .slogan{
+    font-style: italic;
+    @include opacity(.2);
+    margin: 0;
+  }
+}
+
+
+// =============================================================================
+// Navigation
+// =============================================================================
+.outer-nav{
+  &.vertical {
+    top: 50%;
+    @include transform(translateY(-50%));
+    @include transform-style(preserve-3d);
+  }
+
+  &.horizontal {
+    left: 50%;
+    width: 75%;
+    max-width: 1000px;
+    text-align: center;
+    @include transform(translateX(-50%));
+  }
+
+  .outer-nav.vertical a {
+    display: block;
+  }
+
+  .outer-nav.horizontal a {
+    margin: 15px 20px;
+  }
+
+  &.left {
+    left: 25%;
+  }
+
+  &.right {
+    right: 25%;
+  }
+
+  &.top {
+    top: 25%;
+  }
+
+  &.bottom {
+    bottom: 25%;
+  }
+
+  a {
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0 0 30px 0;
+    color: $grey-light;
+    @include transition(color 0.3s);
+    @include transform-style(preserve-3d);
+  }
+
+  a:hover {
+    color: $white;
+  }
+
+  a::before {
+    display: inline-block;
+    font-family: 'typicons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    margin-right: 10px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @include backface-visibility(hidden);
+  }
+}
+
+.effect-rotateleft .outer-nav li {
+  @include opacity(0);
+  @include transform(translateX(350px) translateZ(-1000px));
+  @include transition(transform 0.4s, opacity 0.4s);
+}
+
+.effect-rotateleft.animate .outer-nav .nav{
+  li{
+    @include opacity(1);
+    @include transform(translateX(0) translateZ(0));
+  }
+
+  @include anim-nav-items;
+}
+
+
+
+
+
+

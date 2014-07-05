@@ -1,0 +1,112 @@
+// Use REMs with a pixel fallback for font sizing.
+@mixin font-size($font-size){
+  font-size: $font-size;
+  font-size: ($font-size / $base-font-size)*1rem;
+}
+
+// Set placeholders colors
+@mixin placeholder($placeholdercolour)  {
+  ::-webkit-input-placeholder {
+    color: $placeholdercolour;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $placeholdercolour;
+  }
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: $placeholdercolour;
+  }
+  :-ms-input-placeholder {
+    color: $placeholdercolour;
+  }
+}
+
+// Hide elements from all users.//
+// Used for elements which should not be immediately displayed to any user. An
+// example would be a collapsible fieldset that will be expanded with a click
+// from a user. The effect of this class can be toggled with the jQuery show()
+// and hide() functions.
+@mixin element-hidden {
+  display: none;
+}
+%element-hidden {
+  @include element-hidden;
+}
+// Hide elements visually, but keep them available for screen-readers.
+//
+// Used for information required for screen-reader users to understand and use
+// the site where visual display is undesirable. Information provided in this
+// manner should be kept concise, to avoid unnecessary burden on the user.
+// "!important" is used to prevent unintentional overrides.
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+%element-invisible {
+  @include element-invisible;
+}
+
+
+// Reverts 'element-invisible'.
+@mixin element-visible {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+%element-visible {
+  @include element-visible;
+}
+
+
+// Font awesome
+//
+// Create the given unicode icon
+// $icon: \f0da
+@mixin fa-icon($icon){
+  &:before{
+    content: "#{$icon}";
+    display: inline-block;
+    font-family: $font-awesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@mixin fa-icon-rotate($degrees, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
+  -webkit-transform: rotate($degrees);
+     -moz-transform: rotate($degrees);
+      -ms-transform: rotate($degrees);
+       -o-transform: rotate($degrees);
+          transform: rotate($degrees);
+}
+
+@mixin fa-icon-flip($horiz, $vert, $rotation) {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=$rotation);
+  -webkit-transform: scale($horiz, $vert);
+     -moz-transform: scale($horiz, $vert);
+      -ms-transform: scale($horiz, $vert);
+       -o-transform: scale($horiz, $vert);
+          transform: scale($horiz, $vert);
+}
+
+// Animate menu items
+@mixin anim-nav-items{
+  @for $i from 1 to $nav-items {
+    li:nth-child(#{$i}) {
+      $time: (($i * 4) / 100) - 0.04;
+      @include transition-delay(#{$time}s);
+    }
+  }
+}
+
