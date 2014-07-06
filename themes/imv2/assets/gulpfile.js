@@ -22,8 +22,8 @@ gulp.task('compile-sass', function() {
 // Scripts
 gulp.task('compile-js', function() {
   gulp.src([
-    __dirname + '/js/src/**/_*.js',
-    __dirname + '/js/src/**/app.js'
+    __dirname + '/js/src/**/app.js',
+    __dirname + '/js/src/**/_*.js'
   ])
     .pipe(concat('app.js'))
     .pipe(gulp.dest(__dirname + '/js/dist/'))

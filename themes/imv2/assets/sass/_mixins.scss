@@ -104,7 +104,7 @@
 @mixin anim-nav-items{
   @for $i from 1 to $nav-items {
     li:nth-child(#{$i}) {
-      $time: (($i * 4) / 100) - 0.04;
+      $time: (($i * 8) / 100);
       @include transition-delay(#{$time}s);
     }
   }

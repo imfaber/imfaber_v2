@@ -1,5 +1,4 @@
-
-var intro = {
+App.intro = {
   $intro: $('.intro', '#layout-header'),
 
   init: function(){
@@ -7,7 +6,7 @@ var intro = {
     this.animate($('h1', that.$intro), 'fadeIn');
     setTimeout(function() {
       that.animate($('.slogan', '#layout-header'), 'bounceIn');
-    }, 2000);
+    }, 0);
   },
 
   animate: function($elem, effect){
@@ -70,5 +69,5 @@ var intro = {
     });
   }
 }
-intro.init();
+
 

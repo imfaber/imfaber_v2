@@ -304,29 +304,40 @@ html {
   width: 100%;
   text-align: center;
   height: 60px;
+  margin-top: -30px;
+  top: 50%;
   color: white;
+  position: absolute;
+  -webkit-transition: top 0.8s;
+  -moz-transition: top 0.8s;
+  -o-transition: top 0.8s;
+  transition: top 0.8s;
 }
-/* line 12, ../sass/_components.scss */
+/* line 16, ../sass/_components.scss */
 .intro h1,
 .intro .slogan {
   display: none;
   font-weight: normal;
 }
-/* line 17, ../sass/_components.scss */
+/* line 21, ../sass/_components.scss */
 .intro h1 {
   font-size: 25px;
   font-size: 1.38889rem;
   margin: 0 0 .3em;
 }
-/* line 22, ../sass/_components.scss */
+/* line 26, ../sass/_components.scss */
 .intro .slogan {
   font-style: italic;
-  opacity: 0.2;
+  color: #575757;
   margin: 0;
 }
+/* line 31, ../sass/_components.scss */
+.intro.placed {
+  top: 15%;
+}
 
-/* line 34, ../sass/_components.scss */
-.outer-nav.vertical {
+/* line 40, ../sass/_components.scss */
+.outer-nav {
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
@@ -338,44 +349,9 @@ html {
   -ms-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  list-style: none;
 }
-/* line 40, ../sass/_components.scss */
-.outer-nav.horizontal {
-  left: 50%;
-  width: 75%;
-  max-width: 1000px;
-  text-align: center;
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-/* line 48, ../sass/_components.scss */
-.outer-nav .outer-nav.vertical a {
-  display: block;
-}
-/* line 52, ../sass/_components.scss */
-.outer-nav .outer-nav.horizontal a {
-  margin: 15px 20px;
-}
-/* line 56, ../sass/_components.scss */
-.outer-nav.left {
-  left: 25%;
-}
-/* line 60, ../sass/_components.scss */
-.outer-nav.right {
-  right: 25%;
-}
-/* line 64, ../sass/_components.scss */
-.outer-nav.top {
-  top: 25%;
-}
-/* line 68, ../sass/_components.scss */
-.outer-nav.bottom {
-  bottom: 25%;
-}
-/* line 72, ../sass/_components.scss */
+/* line 47, ../sass/_components.scss */
 .outer-nav a {
   display: inline-block;
   white-space: nowrap;
@@ -390,12 +366,19 @@ html {
   -ms-transform-style: preserve-3d;
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
+  font-size: 24px;
+  font-size: 1.33333rem;
+  text-decoration: none;
 }
-/* line 81, ../sass/_components.scss */
+/* line 58, ../sass/_components.scss */
+.outer-nav .last a {
+  margin: 0;
+}
+/* line 62, ../sass/_components.scss */
 .outer-nav a:hover {
   color: white;
 }
-/* line 85, ../sass/_components.scss */
+/* line 66, ../sass/_components.scss */
 .outer-nav a::before {
   display: inline-block;
   font-family: 'typicons';
@@ -414,8 +397,13 @@ html {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
+/* line 80, ../sass/_components.scss */
+.outer-nav .order {
+  display: inline-block;
+  width: 33px;
+}
 
-/* line 101, ../sass/_components.scss */
+/* line 86, ../sass/_components.scss */
 .effect-rotateleft .outer-nav li {
   opacity: 0;
   -webkit-transform: translateX(350px) translateZ(-1000px);
@@ -423,13 +411,13 @@ html {
   -ms-transform: translateX(350px) translateZ(-1000px);
   -o-transform: translateX(350px) translateZ(-1000px);
   transform: translateX(350px) translateZ(-1000px);
-  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
-  -moz-transition: -moz-transform 0.4s, opacity 0.4s;
-  -o-transition: -o-transform 0.4s, opacity 0.4s;
-  transition: transform 0.4s, opacity 0.4s;
+  -webkit-transition: -webkit-transform 0.6s, opacity 0.6s;
+  -moz-transition: -moz-transform 0.6s, opacity 0.6s;
+  -o-transition: -o-transform 0.6s, opacity 0.6s;
+  transition: transform 0.6s, opacity 0.6s;
 }
 
-/* line 108, ../sass/_components.scss */
+/* line 96, ../sass/_components.scss */
 .effect-rotateleft.animate .outer-nav .nav li {
   opacity: 1;
   -webkit-transform: translateX(0) translateZ(0);
@@ -440,24 +428,222 @@ html {
 }
 /* line 106, ../sass/_mixins.scss */
 .effect-rotateleft.animate .outer-nav .nav li:nth-child(1) {
-  -webkit-transition-delay: 0s;
-  -moz-transition-delay: 0s;
-  -o-transition-delay: 0s;
-  transition-delay: 0s;
-}
-/* line 106, ../sass/_mixins.scss */
-.effect-rotateleft.animate .outer-nav .nav li:nth-child(2) {
-  -webkit-transition-delay: 0.04s;
-  -moz-transition-delay: 0.04s;
-  -o-transition-delay: 0.04s;
-  transition-delay: 0.04s;
-}
-/* line 106, ../sass/_mixins.scss */
-.effect-rotateleft.animate .outer-nav .nav li:nth-child(3) {
   -webkit-transition-delay: 0.08s;
   -moz-transition-delay: 0.08s;
   -o-transition-delay: 0.08s;
   transition-delay: 0.08s;
+}
+/* line 106, ../sass/_mixins.scss */
+.effect-rotateleft.animate .outer-nav .nav li:nth-child(2) {
+  -webkit-transition-delay: 0.16s;
+  -moz-transition-delay: 0.16s;
+  -o-transition-delay: 0.16s;
+  transition-delay: 0.16s;
+}
+/* line 106, ../sass/_mixins.scss */
+.effect-rotateleft.animate .outer-nav .nav li:nth-child(3) {
+  -webkit-transition-delay: 0.24s;
+  -moz-transition-delay: 0.24s;
+  -o-transition-delay: 0.24s;
+  transition-delay: 0.24s;
+}
+/* line 106, ../sass/_mixins.scss */
+.effect-rotateleft.animate .outer-nav .nav li:nth-child(4) {
+  -webkit-transition-delay: 0.32s;
+  -moz-transition-delay: 0.32s;
+  -o-transition-delay: 0.32s;
+  transition-delay: 0.32s;
+}
+
+/* line 103, ../sass/_components.scss */
+.nav-divider {
+  width: 1px;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #575757;
+  opacity: 0.3;
+}
+
+/* line 117, ../sass/_components.scss */
+#hamburger {
+  position: fixed;
+  z-index: 9;
+  top: 10px;
+  right: 15px;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 26px;
+  height: 26px;
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+/* line 133, ../sass/_components.scss */
+#hamburger:focus, #hamburger:active {
+  outline: none;
+}
+/* line 138, ../sass/_components.scss */
+#hamburger span,
+#hamburger span:before,
+#hamburger span:after {
+  cursor: pointer;
+  height: 3px;
+  width: 23px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+  cursor: pointer;
+  -webkit-transition: all 400ms ease-in-out, top 250ms, bottom 250ms, background 250ms;
+  -moz-transition: all 400ms ease-in-out, top 250ms, bottom 250ms, background 250ms;
+  -o-transition: all 400ms ease-in-out, top 250ms, bottom 250ms, background 250ms;
+  transition: all 400ms ease-in-out, top 250ms, bottom 250ms, background 250ms;
+}
+/* line 155, ../sass/_components.scss */
+#hamburger span:before {
+  top: -6px;
+}
+/* line 158, ../sass/_components.scss */
+#hamburger span:after {
+  bottom: -6px;
+}
+/* line 165, ../sass/_components.scss */
+#hamburger:hover span:before {
+  top: -8px;
+}
+/* line 168, ../sass/_components.scss */
+#hamburger:hover span:after {
+  bottom: -8px;
+}
+/* line 175, ../sass/_components.scss */
+#hamburger.active span {
+  background-color: transparent;
+}
+/* line 179, ../sass/_components.scss */
+#hamburger.active span:before,
+#hamburger.active span:after {
+  background: #575757;
+  top: 0;
+}
+/* line 184, ../sass/_components.scss */
+#hamburger.active span:before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* line 188, ../sass/_components.scss */
+#hamburger.active span:after {
+  top: 8px;
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+  -moz-transform: translateY(-8px) rotate(-45deg);
+  -ms-transform: translateY(-8px) rotate(-45deg);
+  -o-transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-8px) rotate(-45deg);
+}
+/* line 193, ../sass/_components.scss */
+#hamburger.active:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+/* line 196, ../sass/_components.scss */
+#hamburger.active:hover span:before,
+#hamburger.active:hover span:after {
+  background: white;
+}
+
+/* line 210, ../sass/_components.scss */
+#footer .credit,
+#footer .follow-me,
+#footer .v1 {
+  margin: 1em 0 0.5em;
+}
+/* line 213, ../sass/_components.scss */
+#footer .credit {
+  width: 16%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 0%;
+  clear: none;
+  color: #575757;
+  padding-left: 1em;
+}
+/* line 218, ../sass/_components.scss */
+#footer .follow-me {
+  padding: 0;
+  text-align: center;
+  width: 64%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 18%;
+  clear: none;
+}
+/* line 222, ../sass/_components.scss */
+#footer .follow-me li {
+  display: inline-block;
+  margin: 0 4px;
+}
+/* line 226, ../sass/_components.scss */
+#footer .follow-me a {
+  font-size: 25px;
+  font-size: 1.38889rem;
+}
+/* line 230, ../sass/_components.scss */
+#footer .v1 {
+  font-weight: bold;
+  text-align: right;
+  padding-right: 1em;
+  width: 16%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+}
+/* line 237, ../sass/_components.scss */
+#footer a {
+  text-decoration: none;
+  color: #575757;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -o-transition: color 0.3s;
+  transition: color 0.3s;
+}
+/* line 243, ../sass/_components.scss */
+#footer a:hover {
+  color: white;
+}
+
+/* line 252, ../sass/_components.scss */
+#page-home {
+  color: white;
+  border: 5px solid #575757;
+  background: #222222;
+}
+/* line 256, ../sass/_components.scss */
+#page-home .hello {
+  font-size: 160px;
+  font-size: 8.88889rem;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: -30px 0 0 0;
 }
 
 /* line 4, ../sass/_layouts.scss */
@@ -465,38 +651,38 @@ html {
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 2;
 }
 
-/* line 10, ../sass/_layouts.scss */
+/* line 11, ../sass/_layouts.scss */
 #layout.modalview {
   position: fixed;
   background: #222222;
-  -webkit-perspective: 1500px;
-  -moz-perspective: 1500px;
-  -ms-perspective: 1500px;
-  -o-perspective: 1500px;
-  perspective: 1500px;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
 }
 
-/* line 20, ../sass/_layouts.scss */
+/* line 21, ../sass/_layouts.scss */
 #layout-header,
 #layout-footer {
   display: none;
 }
 
-/* line 25, ../sass/_layouts.scss */
+/* line 26, ../sass/_layouts.scss */
 .modalview #layout-header,
 .modalview #layout-footer {
   display: block;
 }
 
-/* line 29, ../sass/_layouts.scss */
+/* line 30, ../sass/_layouts.scss */
 #layout-nav {
   position: absolute;
   height: auto;
   font-size: 2em;
   left: 50%;
-  margin-left: 20px;
 }
 
 /* line 37, ../sass/_layouts.scss */
@@ -510,7 +696,6 @@ html {
 
 /* line 48, ../sass/_layouts.scss */
 #layout-content {
-  background: #fff;
   min-height: 100%;
   position: relative;
   outline: 1px solid rgba(0, 0, 0, 0);
@@ -522,7 +707,12 @@ html {
   transform: translateZ(0) translateX(0) rotateY(0deg);
 }
 
-/* line 57, ../sass/_layouts.scss */
+/* line 61, ../sass/_layouts.scss */
+.start #layout-content {
+  opacity: 0;
+}
+
+/* line 65, ../sass/_layouts.scss */
 #layout-content::after {
   content: '';
   position: absolute;
@@ -540,7 +730,7 @@ html {
   transition: opacity 0.4s, height 0s 0.4s;
 }
 
-/* line 70, ../sass/_layouts.scss */
+/* line 78, ../sass/_layouts.scss */
 .modalview #layout-content {
   position: absolute;
   overflow: hidden;
@@ -554,7 +744,7 @@ html {
   backface-visibility: hidden;
 }
 
-/* line 79, ../sass/_layouts.scss */
+/* line 87, ../sass/_layouts.scss */
 .modalview #layout-content > .inner-wrapper {
   -webkit-transform: translateZ(-1px);
   -moz-transform: translateZ(-1px);
@@ -564,12 +754,12 @@ html {
   /* solves a rendering bug in Chrome on Windows */
 }
 
-/* line 83, ../sass/_layouts.scss */
+/* line 91, ../sass/_layouts.scss */
 .effect-rotateleft #layout-content {
-  -webkit-transition: -webkit-transform 0.4s;
-  -moz-transition: -moz-transform 0.4s;
-  -o-transition: -o-transform 0.4s;
-  transition: transform 0.4s;
+  -webkit-transition: -webkit-transform 0.6s;
+  -moz-transition: -moz-transform 0.6s;
+  -o-transition: -o-transform 0.6s;
+  transition: transform 0.6s;
   -webkit-transform-origin: 0% 50% 50%;
   -moz-transform-origin: 0% 50% 50%;
   -ms-transform-origin: 0% 50% 50%;
@@ -577,7 +767,7 @@ html {
   transform-origin: 0% 50% 50%;
 }
 
-/* line 88, ../sass/_layouts.scss */
+/* line 96, ../sass/_layouts.scss */
 .animate #layout-content::after {
   height: 101%;
   opacity: 1;
@@ -587,13 +777,9 @@ html {
   transition: opacity 0.3s;
 }
 
-/* line 94, ../sass/_layouts.scss */
-.effect-rotateleft #layout-content::after {
-  background: rgba(255, 255, 255, 0.6);
-}
-
-/* line 98, ../sass/_layouts.scss */
+/* line 106, ../sass/_layouts.scss */
 .effect-rotateleft.animate #layout-content {
+  opacity: 1;
   -webkit-transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
   -moz-transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
   -ms-transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
@@ -601,7 +787,16 @@ html {
   transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
 }
 
-/* line 102, ../sass/_layouts.scss */
+/* line 111, ../sass/_layouts.scss */
+.effect-rotateleft.start #layout-content {
+  -webkit-transform: translateZ(-1800px) translateX(-250%) rotateY(45deg);
+  -moz-transform: translateZ(-1800px) translateX(-250%) rotateY(45deg);
+  -ms-transform: translateZ(-1800px) translateX(-250%) rotateY(45deg);
+  -o-transform: translateZ(-1800px) translateX(-250%) rotateY(45deg);
+  transform: translateZ(-1800px) translateX(-250%) rotateY(45deg);
+}
+
+/* line 115, ../sass/_layouts.scss */
 .no-csstransforms3d .effect-rotateleft.animate #layout-content {
   left: -75%;
 }

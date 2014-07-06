@@ -24,32 +24,19 @@ function onStart(){
         {% styles %}
         <link href="{{ [
             'assets/css/animate.min.css',
+            'assets/vendor/font-awesome/css/font-awesome.min.css',
             'assets/css/theme.css'
         ]|theme }}" rel="stylesheet">
     </head>
 
     <body>
 
-        <div id="layout" class="perspective effect-rotateleft modalview animate">
+        <div id="layout" class="perspective effect-rotateleft modalview">
+        <!-- <div id="layout" class="perspective effect-rotateleft modalview animate"> -->
         <!-- <div id="perspective" class="perspective effect-rotateleft"> -->
             <!-- Header -->
             <header id="layout-header">
-
-                <div class="intro">
-                    <h1>Fabrizio Meinero - Web developer</h1>
-                    <p class="slogan">Crafting bits and pixels since 2001</p>
-                </div>
-
-
-                <!-- Nav -->
-                <nav id="layout-nav" class="outer-nav vertical" role="navigation">
-                    <ul class="nav nav-inline">
-                        <li class="item-0{% if this.page.id == 'home' %} active{% endif %}"><a href="{{ 'about'|page }}"><span class="order">01.</span> ABOUT</a></li>
-                        <li class="item-1{% if this.page.id == 'work' %} active{% endif %}"><a href="{{ 'work'|page }}"><span class="order">02.</span> WORK</a></li>
-                        <li class="item-2{% if this.page.id == 'contact' %} active{% endif %}"><a href="{{ 'contact'|page }}"><span class="order">03.</span> CONTACT</a></li>
-                    </ul>
-                </nav>
-
+                {% partial "header" %}
             </header>
 
             <!-- Content -->
@@ -62,6 +49,8 @@ function onStart(){
                 {% partial "footer" %}
             </footer>
         </div>
+
+        <button id="hamburger"><span></span></button>
 
         <!-- Scripts -->
         <script src="{{ [

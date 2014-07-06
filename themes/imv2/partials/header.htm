@@ -1,0 +1,25 @@
+<div class="intro">
+    <h1>Fabrizio Meinero - Web developer</h1>
+    <p class="slogan">Crafting bits and pixels since 2001</p>
+</div>
+
+
+<!-- Nav -->
+<nav id="layout-nav" class="outer-nav" role="navigation">
+    <ul class="nav nav-inline">
+        <li class="{% if this.page.id == 'about' %} active{% endif %}">
+          <a href="{{ 'about'|page }}" data-page-id="page-about"><span class="order">01.</span> ABOUT </a>
+        </li>
+        <li class="{% if this.page.id == 'work' %} active{% endif %}">
+          <a href="{{ 'work'|page }}" data-page-id="page-work"><span class="order">02.</span> WORK</a>
+        </li>
+        <li class="{% if this.page.id == 'contact' %} active{% endif %}">
+          <a href="{{ 'contact'|page }}" data-page-id="page-contact"><span class="order">03.</span> CONTACT</a>
+        </li>
+        <li class="last{% if this.page.id == 'contact' %} active{% endif %}">
+          <a href="{{ 'contact'|page }}" data-page-id="page-blog"><span class="order">04.</span> BLOG</a>
+        </li>
+    </ul>
+</nav>
+
+
